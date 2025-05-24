@@ -1,0 +1,452 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: black;
+  color: #e7e7e7;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  gap: 2rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex: 1;
+  justify-content: center;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+nav a:hover {
+  color: #a7a7a7;
+}
+
+
+.image-gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.layer-blur {
+  height: 0;
+  width: 30rem;
+  position: absolute;
+  top: 20%;
+  right: 0%;
+  box-shadow: 0 0 700px 15px whitesmoke;
+  rotate: -30deg;
+  z-index: -1;
+}
+
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+main {
+  min-height: calc(90vh - 6rem);
+  padding-top: 15vh;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1005px;
+  margin-left: 10%;
+  gap: 2rem;
+  z-index: 999;
+}
+
+
+.left-part {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.right-part {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 90%;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(127, 66, 167, 0.6);
+}
+
+
+.tag-box {
+  position: relative;
+  width: 18rem;
+  height: 3rem;
+  border-radius: 50px;
+  background: linear-gradient(to right, #656565, #7f42a7, #6600c5);
+  background-size: 200%;
+  animation: animationGradient 2.5s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes animationGradient {
+  to {
+    background-position: 200%;
+  }
+}
+
+.tag {
+  position: absolute;
+  inset: 3px;
+  background-color: black;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn-get-started,
+.btn-signin-main {
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-get-started {
+  background-color: #7f42a7;
+  color: white;
+}
+
+.btn-get-started:hover {
+  background-color: #6600c5;
+}
+
+.btn-signin-main {
+  background-color: lightgray;
+  color: black;
+}
+
+.btn-signin-main:hover {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+
+#projects {
+  margin-left: 10%;  
+  margin-top: 4rem;
+  max-width: 1005px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+
+#projects .card:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: none;
+}
+
+.card img {
+  width: calc(100% - 20px);  
+  margin: 10px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+
+#projects .card:hover .card-title,
+#projects .card:hover .card-body p,
+#projects .card:hover .btn-get-started {
+  color: black;
+}
+
+
+#education {
+  margin-left: 10%;  
+  margin-top: 4rem;
+  max-width: 1005px;
+}
+
+
+#education .card {
+  background-color: #1a1a1a;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  transform: none !important; 
+  box-shadow: none !important;  
+}
+
+
+#education .card:hover {
+  background-color: white;
+  color: black;
+}
+
+
+#education .card:hover .card-title,
+#education .card:hover .card-text,
+#education .card:hover p,
+#education .card:hover a {
+  color: black;
+}
+
+
+#education .card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+
+.contact-form .form-control {
+  background-color: #1a1a1a;
+  border: 1px solid #555;
+  color: #e7e7e7;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+  outline: none;
+  border-color: #7f42a7;
+  box-shadow: 0 0 8px #7f42a7;
+  background-color: #121212;
+  color: #fff;
+}
+
+.contact-form label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.contact-form .btn-primary {
+  background-color: #7f42a7;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+  background-color: #6600c5;
+}
+
+.contact-form .form-control {
+  background-color: #1a1a1a;
+  border: 1px solid #555;
+  color: #e7e7e7; 
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form .form-control::placeholder {
+  color: #e7e7e7; 
+  opacity: 1;
+}
+
+.contact-form .form-control:focus {
+  outline: none;
+  border-color: #7f42a7;
+  box-shadow: 0 0 8px #7f42a7;
+  background-color: #121212;
+  color: #fff;
+}
+
+.footer {
+  background-color: #1a1a1a;
+  color: #e7e7e7;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid #444;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  max-width: 1005px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-links a {
+  color: #e7e7e7;
+  margin: 0 0.8rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #7f42a7;
+}
+
+.contact-section {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.send-button {
+  height: 100px; 
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .send-button {
+    height: auto;
+    padding: 1rem;
+  }
+}
+
+#projects h1:hover,
+#education h1:hover,
+#contact h1:hover {
+  color: #a7a7a7;
+  cursor: pointer; 
+  transition: color 0.3s ease;
+}
+
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); 
+  gap: 10px; 
+}
+
+.skills-grid .btn {
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.skills-grid .btn:hover {
+  background-color: white !important; 
+  color: black !important;              
+  transition: background-color 0.3s, color 0.3s; 
+}
+.header {
+  position: relative;
+  z-index: 10;
+
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px; 
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, white 50%, transparent);
+}
+
+.footer {
+  position: relative;
+  z-index: 10;
+
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, white 50%, transparent);
+}
+
+.profile-pic {
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  filter: grayscale(0);
+}

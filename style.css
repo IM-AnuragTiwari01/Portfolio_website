@@ -450,3 +450,16 @@ main {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
   filter: grayscale(0);
 }
+
+.typing::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
